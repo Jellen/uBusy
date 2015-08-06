@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=yes">
+	<title>Slideout Menu</title>
+	<meta name="description" content="Some slide and push menu demos using CSS3 transitions.">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!--JQuery-->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+<!--<style>
+	#iframe{
+		position:relative;
+		width:100%;
+		height:100%;
+		margin:0 auto;
+		min-height:900px;
+		overflow-x:hidden;
+	}
+</style> -->
+
+</head>
+<body>
+
+<div id="o-wrapper" class="o-wrapper" style="background-color:#fff;">
+      
+	<main class="o-content">
+		<!--<div class="o-container">-->
+			<button id="c-button--slide-left" class="c-button"  align=left>
+				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+		
+			</button>
+
+		
+			<div id="github-icons"></div>
+		<!--</div><!--o-container-->
+	</main><!--o-content-->      
+
+</div><!-- /o-wrapper -->
+
+
+<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+  <button class="c-menu__close">&larr; Close Menu</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Home</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Create Group</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Notifications</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Find People</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link">Messages</a></li>
+  </ul>
+</nav><!-- /c-menu slide-left -->
+
+<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+
+<!-- menus script -->
+<script src="js/dist/menu.js"></script>
+<script>
+  
+  /**
+   * Slide left instantiation and action.
+   */
+  var slideLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+
+  var slideLeftBtn = document.querySelector('#c-button--slide-left');
+  
+  slideLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideLeft.open();
+  });
+
+</script>
+
+</body>
+</html>

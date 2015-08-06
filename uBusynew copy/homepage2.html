@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+	<html>
+
+		<head>	
+			<title>uBusy</title>
+
+			<!-- JQuery specific code-->
+			<!-- sets width of device and names device viewport -->
+			<meta name="viewport" content="user-scalable=yes">
+
+		    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+			<!-- links to the stylesheet(the CSS file specifically for mobile)-->
+			<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+
+			<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+			<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+			
+			<!--slideout menu script stuff-->
+			<meta charset="UTF-8">
+			<meta name="viewport" content="user-scalable=yes">
+			<title>Slideout Menu</title>
+			<meta name="description" content="Some slide and push menu demos using CSS3 transitions.">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/style.min.css">
+			<!-- Latest compiled and minified CSS -->
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+			<!-- Latest compiled and minified JavaScript -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+			<!--JQuery-->
+				<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+
+			<!--Parse-->
+				<script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>	
+
+				<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script> 
+
+				<!--Date Range Picker-->
+			<!-- Include Required Prerequisites -->
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="moment.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="bootcss/bootstrap.css" />
+ 
+			<!-- Include Date Range Picker -->
+			<script type="text/javascript" src="daterangepicker.js"></script>
+			<link rel="stylesheet" type="text/css" href="daterangepicker.css" />
+
+			<script> 
+				(function ($) {
+				  jQuery.expr[':'].Contains = function(a,i,m){
+					  return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+				  };
+				 
+				  function listFilter(header, list) {
+					var form = $("<form>").attr({"class":"filterform","action":"#"}),
+						input = $("<input>").attr({"class":"filterinput","type":"text"});
+					$(form).append(input).appendTo(header);
+				 
+					$(input)
+					  .change( function () {
+						var filter = $(this).val();
+						if(filter) {
+						  $(list).find("a:not(:Contains(" + filter + "))").parent().slideUp();
+						  $(list).find("a:Contains(" + filter + ")").parent().slideDown();
+						} else {
+						  $(list).find("li").slideDown();
+						}
+						return false;
+					  })
+					.keyup( function () {
+						$(this).change();
+					});
+				  }
+				
+				  $(function () {
+					listFilter($("#header"), $("#list"));
+				  });
+				}(jQuery));
+			</script>
+			
+		<style>
+			#pageone .ui-header {
+		    	background: #000;
+			}
+
+		    #loginpage {
+		    	color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    }
+
+		    #signup {
+		    	color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    }
+
+		    #homepage {
+		    	color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    	display:inline;
+		    }
+			#groups{
+				color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    	display:inline;
+			}
+			#findPeople{
+				color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    	display:inline;
+			}
+		    iframe{
+		    	/*min-width: 100%;
+		    	width:400px;*/
+		    	width:100%;
+		    	margin:0 auto;
+		    	min-height:900px;
+		    	overflow:hidden;
+		    }
+		   /* c-menu--slide-left*/
+
+		   </style>
+	</head>
+		<body>
+		<!-- Profile -->
+	<div data-role="page" id="pagethree">
+
+
+			<div data-role="header">
+			<style type="text/css">
+			
+
+
+	        ul {
+	            font-family: basic title font;
+	            font-size: 17px;
+	            margin: 0;
+	            padding: 0;
+	            list-style: none;
+	            
+	        }
+	        ul li {
+	        	border:none;
+	            display: block;
+	            position: relative;
+	            float: right;
+	        }
+	        li ul { display: none; }
+	        ul li a {
+	            display: block;
+	            text-decoration: none;
+	            color: #808080;
+	            
+	            padding: 10px 20px 10px 20px;
+	            background: #transparent;
+	            
+	            margin-left: 1px;
+	            white-space: nowrap;
+	        }
+
+	        ul li a:hover { background: #C8C8C8; }
+	        li:hover ul { 
+	            display: block; 
+	            position: absolute;
+	            
+	        }
+	        
+	        ul {
+				position:fixed;
+				top:0;
+				width:100%;
+			}
+	        li:hover li { 
+	            float: right;
+	            font-size: 15px;
+	        }
+	        li:hover a { background: transparent; }
+	        li:hover li a:hover { background: transparent; }
+	        
+	        .test {
+	  			width:60%;
+	  			display:inline-block;
+	  			overflow: auto;
+	  			white-space: nowrap;
+	  			margin:2px auto;
+	  			font-size: 20px;
+	  			
+			}
+			#userBox1{
+				background-color: #99EBFF;
+				width: 300px;
+				position: relative;
+				top: 200px;
+				left: 700px; 
+				height:50px;
+				padding:50px;
+
+			}
+			#userBox1:hover{
+			-webkit-filter: brightness(70%); 
+			}
+			#userBox2{
+				background-color: #DFDAD7;
+				width: 300px;
+				position: relative;
+				top: 100px;
+				left: 400px; 
+				height:50px;
+				padding:50px;
+			}
+			#userBox2:hover{
+			-webkit-filter: brightness(70%); 
+			}
+
+			.round {
+				border-radius: 50%;
+				overflow: hidden;
+				width: 150px;
+				height: 150px;
+				position: relative;
+				top: -30px;
+				left: 290px; 
+
+			}
+			.round img {
+				display: block;
+	            /* Stretch 
+				height: 100%;
+	            width: 100%; */
+	            min-width: 100%;
+	            min-height: 100%;
+			}
+		
+		    
+
+			.tooltip-wrap {
+		  		position: relative;
+			}
+			.tooltip-wrap .tooltip-content {
+			  display: none;
+			  position: absolute;
+			  bottom: 5%;
+			  left: 5%;
+			  right: 5%;
+			  background-color: #fff;
+			  padding: .5em;
+			}
+			.tooltip-wrap:hover .tooltip-content {
+			  display: block;
+			}
+				#notifications{
+				color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    	display:inline;
+			}
+			#newgform{
+				color: #000;
+		    	font: 36px "basic title font";
+		    	font-weight: bold;
+		    	display:inline;
+			}
+			body {
+				padding: 20px;
+			}
+			input {
+				margin-bottom: 5px; padding: 2px 3px; width: 209px;
+			}
+			td {
+				padding: 4px; border: 1px #CCC solid; width: 100px;
+			}
+			.wrapper-dropdown-5 {
+			    /* Size & position */
+			    position: relative;
+			    width: 200px;
+			    margin: 0 auto;
+			    padding: 12px 15px;
+
+			    /* Styles */
+			    background: #fff;
+			    border-radius: 5px;
+			    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+			    cursor: pointer;
+			    outline: none;
+			    transition: all 0.3s ease-out;
+			}
+
+			.wrapper-dropdown-5:after { /* Little arrow */
+			    content: "";
+			    width: 0;
+			    height: 0;
+			    position: absolute;
+			    top: 50%;
+			    right: 15px;
+			    margin-top: -3px;
+			    border-width: 6px 6px 0 6px;
+			    border-style: solid;
+			    border-color: #4cbeff transparent;
+			}
+			.wrapper-dropdown-5 .dropdown li {
+			    padding: 0 10px ;
+			}
+
+			.wrapper-dropdown-5 .dropdown li a {
+			    display: block;
+			    text-decoration: none;
+			    color: #333;
+			    padding: 10px 0;
+			    transition: all 0.3s ease-out;
+			    border-bottom: 1px solid #e6e8ea;
+			}
+
+			.wrapper-dropdown-5 .dropdown li:last-of-type a {
+			    border: none;
+			}
+
+			.wrapper-dropdown-5 .dropdown li i {
+			    margin-right: 5px;
+			    color: inherit;
+			    vertical-align: middle;
+			}
+
+			/* Hover state */
+
+			.wrapper-dropdown-5 .dropdown li:hover a {
+			    color: #57a9d9;
+			}
+
+			p1 {
+				margin: 10px;
+				background: #D6D4D4;
+				color: #D6D4D4;
+				padding: 15px;
+				display: block;
+				width: 590px;
+				height: 130px;
+				float: left;
+				font-size: 170%;
+				line-height: 1.5;
+				border: 2px solid #000000;
+				
+			}
+			p2 {
+				background: #D6D4D4;
+				color: #D6D4D4;
+				width: 100px;
+				height: 100px;
+				float: right;
+				font-size: 170%;
+				line-height: 1.5;
+				border: 2px solid #000000;
+				overflow: scroll;
+			}
+
+		</style>
+
+		</head>
+
+		<body>
+			<script>
+				function login(){
+					Parse.initialize("K8J4GJuM20HQYCv0D7z94FOdddD4wxEJ8vniBi8B", "SDBejsgBgWodTIRLi2jXmBdWFYklDKSJBjPFdsgy");
+
+					var username = $('#usernameInput').val();
+					var password = $('#passwordInput').val();
+
+					Parse.User.logIn(username, password, {
+					  success: function(user){
+					    console.log("yay");
+					    window.alert("Welcome to Ubusy!!!");
+					    // Do stuff after successful login.
+					  },
+					  error: function(user, error) {
+					  	console.log("nah");
+					  	var answer = confirm("Login failed \n Try again");
+					  	if (answer){
+					  		window.location="#pageone";
+					  	}
+					  	else{
+					  		window.location="#pageone";
+					  	}
+					  }
+					});
+				}
+			</script>
+
+				<!-- First Page -->
+			<div data-role="page" id="pageone">
+				<div data-role="header" data-theme="b">
+					<h1><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h1></b></font></center>
+				</div>
+				<div data-role="content" id="loginpage">
+					<!--<p style="font-family: Breamcatcher" ALIGN=CENTER><font size=6 color=#00bfff>
+					</center>The perfect app for making plans with friends!</p></center></font>
+					to link to next page, <a href=# and the id of the page I want to go to -->
+					<p><b>Login:</b></p><hr>
+					<form action="demo_form.asp">
+		  			<input type="text"  id="usernameInput" placeholder="Username">
+		  			<input type="password" id="passwordInput" placeholder="Password (max 10)"maxlength="10">
+		 			</form>
+		 			<a href="#pagethree">
+		   			<input type="button" onclick="login()" value="Submit"/></a>
+
+					<font size=6><a href="#pagetwo"><center>Sign Up</a></p></center></a></font>
+				</div>
+			</div>
+
+			<!-- Second page -->
+			<div data-role="page" id="pagetwo">
+				<div data-role="header">
+					<h2><b><center><font size= 8 color=#00bfff><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h2></b></font></center>	
+				</div>
+				<div data-role="content" id="signup">
+					<head>
+						<p><center><font size=6 color=#0099FF></b>Sign Up</p></center></b></font>
+			  			<ul style="list-style-type:none">
+			    			<li>
+			      				<input type="text" placeholder="Name:">
+							</li><br>
+							<li>
+			      				<input type="text" placeholder="User:">
+							</li><br>
+							<li>
+			      				<input type="password" name="pwd" placeholder="Password (max 10)"maxlength="10">
+							</li><br>
+							<li>
+			      				<input type="password" name="pwd" placeholder="Confirm Password"maxlength="10">
+							</li><br>
+							<li>
+			      				<input type="text" placeholder="E-mail">
+			      				
+							</li><br>
+							<li>
+			      				<input type="text" placeholder="(optional) phone #" >
+							</li><br>
+							<li>
+							<button type="submit" form="form1" value="Submit">Submit</button>
+							</li>
+						</ul>
+						
+					</head>
+					<p><font size=5 color=#00CC00><a href="#pageone">Go Back</a></p></font>
+				</div>
+			</div>	
+
+
+			<!--page 3 Homepage-->
+			<div data-role="page">
+			    <div id="header">
+			    
+			    	<iframe src="page3.html"></iframe>
+			    </div>
+			</div>    	
+
+			    	
+			<!-- Fourth Page -->
+			<div data-role="page" id="pagefour">
+				<div data-role="header">
+					<h4><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h4></b></font></center>
+				</div>
+					<div data-role="content" id="groups">
+						<p><center>My Groups</p></center></font>
+						<font size= 5>
+						<center>
+							
+						<div style="display: inline-block">
+							<div class="tooltip-wrap" >
+								<img src="squad.jpg" alt="friends" width="150" />
+								<div class="tooltip-content">
+									<p>7 members</p>
+								</div> 
+							</div>
+							<p><br>Squad</p>
+						</div>
+							
+						<div style="display: inline-block">
+							<div class="tooltip-wrap">
+							  <img src="gwclogo.png" alt="GWC logo" width="150" />
+							  <div class="tooltip-content">
+								<p>23 members</p>
+							  </div> 
+							</div>
+							<p><br>Girls Who Code</p>
+						</div>
+							
+						<div style="display: inline-block">
+							<div class="tooltip-wrap">
+							  <img src="family.jpg" alt="family" width="150" />
+							  <div class="tooltip-content">
+								<p>4 members</p>
+							  </div> 
+							</div>
+							<p><br>Family</p>
+						</div>
+
+						<center>
+						<p><br><br><center><a href="#pageseven">+  Create New Group</a></p></center>
+						<p><center><a href="#pageten">+  Create New Group Event</a></p></center>
+					</div>
+				
+			</div>
+
+			<!-- Fifth Page -->
+			<div data-role="page" id="pagefive">
+				<div data-role="header">
+					<h4><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h4></b></font></center>
+				</div>
+				<!--slideout menu-->
+				<div id="o-wrapper" class="o-wrapper" style="background-color:#fff;">
+					<main class="o-content">
+						<div data-role="content" id="findPeople">
+							<p><center><font>Find People</center></p></font>
+							<p><font size=4><center>Find your friends so you can see their calendars</font></center></p>
+							<p><font size=4><center>Just type in their username in the search bar</font></center></p>
+						</div>		
+				</div>
+				<div id="wrap"> 
+					<h1 id="header"> </h1> 
+					<center>
+						<div id="findPeople">
+							<ul id="list"> 
+								<li><a href="#">Meganlove</a></li> 
+								<li><a href="#">Leaf</a></li> 
+								<li><a href="#">Apple</a></li> 
+								<li><a href="#">Jellen</a></li> 
+								<li><a href="#pageeleven">Tom Riddle</a></li> 
+								<li><a href="#">Fred</a></li>
+								<li><a href="#">Singer</a></li>
+								<li><a href="#">Monkey</a></li>
+
+							</ul> 
+						</div>
+					</center>
+				</div> 
+			</div>
+
+			<!-- Sixth Page -->
+			<div data-role="page" id="pagesix">
+				<div data-role="header">
+					<h6><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h6></b></font></center>
+				</div>
+				<div data-role="content" id="notifications">
+					<p><center>Notifications</p></center></font>
+					<p><font size= 6>New Groups</font></p>
+					<p><font size= 5 color=#00bfff>You have been added to the group Girls Who Code</font></p>
+					<p><font size= 6>New Events</font></p>
+					<p><font size= 5 color=#00bfff>No New Events</font></p>
+				</div>		
+				
+			</div>
+
+			<!-- Seventh Page -->
+			<div data-role="page" id="pageseven">
+				<div data-role="header">
+					<h4><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h4></b></font></center>
+				</div>
+				<div data-role="content" id="newgform">
+					<p><center>New Group</p></center></font>
+					
+					<input type="text" placeholder="Group Name">
+			  		<!--<input type="text" placeholder="Add Members">-->
+			  		
+					<div id="popUpDiv">
+						<select id="popupSelect">
+							<option>Add members</option>
+						    <option value="First">First</option>
+						    <option value="Second">Second</option>
+						    <option value="Third">Third</option>
+						</select>
+					</div>​
+
+			  		<input type="file" placeholder="Add Group Photo">
+			  		<a href="#pagefour"><input type="button" value="Create Group"/></a>
+					
+					<p><br><br><center><a href="#pagefour">Back to My Groups</a></p></center>
+				</div>
+			</div>
+
+			<!-- eigth page-->
+		<div data-role="page" id="pageeight">
+			<div data-role="header">
+					<h5><b><center><font size= 8 color=#00bfff><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h5></b></font></center>	
+				</div>
+				<div data-role="content" id="messagespage">
+					<div id="o-wrapper" class="o-wrapper" style="background-color:#fff;">
+						<main class="o-content">
+						<button id="c-button--slide-left" class="c-button"  align=left>
+							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+						</button>
+
+					</div>
+					<p style="font-family: Breamcatcher" ALIGN=CENTER><b><font size=6 color=#000000>
+						</center>My Messages</p></font></b>
+					</style>
+					<p1><p2><img src="https://pbs.twimg.com/profile_images/2597296738/image.jpg" width="100" height="100"></img></p2><a href="#pagethree" style="color: #00BFFF">Tom Riddle</a><br><b><font size="4" color=#000000>What's up?<br></b><font size="2">Sent 20 min ago</font></br></font></p1>
+					<p1><p2><img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/11700887_113991875607531_4296852936523572784_n.jpg?oh=5b8ea7e470ac17b241957fe16a586307&oe=563969E0&__gda__=1447354326_d654f9fa74d8b7c4928400500776c8b9" width="100" height="100"></img></p2><a href="#pagethree" style="color: #00BFFF">Megan Love</a><br><b><font size="4" color=#000000>What's up?</b><br><font size="2">Sent 20 min ago</font></br></font></p1>	
+					<p1><p2><img src="https://pbs.twimg.com/profile_images/1474727146/if3nsn_400x400.png" width="100" height="100"></img></p2><a href="#pagethree" style="color: #00BFFF">Fred</a><br><b><font size="4" color=#000000>Can you hang out tomorrow?</b><br><font size="2">Sent 20 min ago</font></br></font></p1>	
+					<p1><p2><img src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xft1/v/t1.0-9/11698856_1624865097793485_5351928985783329231_n.jpg?oh=ba142c9f4955ed14992eb19b93603730&oe=56492EE0&__gda__=1448581249_7a5ec194a96b2322cedd1fe5f5015fa5" width="100" height="100"></img></p2><a href="#pagethree" style="color: #00BFFF">Jellen</a><br><b><font size="4" color=#000000>What's your favorite food?</b><br><font size="2">Sent 20 min ago</font></br></font></p1>	
+					<p1><p2><img src="http://gloucesterstage.com/_website/wp-content/uploads/2015/06/apples2.jpg" width="100" height="100"></img></p2><a href="#pagethree" style="color: #00BFFF">Apple</a><br><b><font size="4" color=#000000>What's your favorite color?<br></b><font size="2">Sent 20 min ago</font></br></font></p1>
+					<p1><p2><img src="http://news.thomasnet.com/~/media/AFAE75936F2645889B5A46A2C8917242.bmp" width="100" height="100"></img></p2><a href="#pagethree" style="color: #00BFFF">Leaf</a><br><b><font size="4" color=#000000>When do you start school?</b><br><font size="2">Sent 20 min ago</font></br></font></p1>
+
+			<!-- Tenth Page -->
+			<div data-role="page" id="pageten">
+				<div data-role="header">
+					<h4><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h4></b></font></center>
+				</div>
+				<div data-role="content" id="newgform">
+					<p><center>New Event</p></center></font>
+						<select name="select-choice-a" id="choices" data-native-menu="false">
+							<option>Choose a Group</option>
+							<option>Squad</option>
+							<option>Girls Who Code</option>
+							<option>Family</option>
+						</select>
+			  		<input type="text" placeholder="Event Title">
+			  		<input type="text" placeholder="Event Description (optional)">
+			  		<p><font size=5>Find me an available date</font></p>
+			  		<input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+
+					<script type="text/javascript">
+					$(function() {
+						$('input[name="daterange"]').daterangepicker();
+					});
+					</script>
+			  		
+					<a href="#pagefour"><input type="button" value="Create Event"/></a>
+					
+					<p><br><br><center><a href="#pagefour">Back to My Groups</a></p></center>
+				</div>
+			</div>
+
+			<!--Eleventh Page-->
+			<div data-role="page" id="pageeleven">
+				<div data-role="header">
+					<h4><b><center><a href="#pagethree"><img src = "logo.gif" alt="uBusy" width="200"></a></h4></b></font></center>
+				</div>
+
+			</div>
+		</body>
+
+	</html>
